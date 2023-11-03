@@ -29,12 +29,14 @@ namespace wordsFinder
                     line = line.Replace(el, ' ');
 
             list.AddRange(line.Split(' '));
+            list.RemoveAll(string.IsNullOrWhiteSpace);
 
             for (int i = 0; i < list.Count; i++)
                 list[i] = list[i].Trim();
             
             return list;
         }
-
+        
+        
     }
 }

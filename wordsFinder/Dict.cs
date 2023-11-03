@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace wordsFinder
 {
@@ -18,11 +19,34 @@ namespace wordsFinder
             }
         }
 
-        public static void Print()
+        public static void PrintTop(int value)
+        {
+            var values = new int[dwords.Count];
+            int count = 0;
+            foreach (var el in dwords)
+            {
+                values[count] = el.Value;
+                count++;
+            }
+            Array.Sort(values);
+
+            for (int i = values.Length-1; i >= values.Length-value; i--)
+            {
+                foreach (var el in dwords)
+                {
+                    if (values[i] == el.Value)
+                        Console.WriteLine($"{el.Key}\t\t{el.Value}");
+                }
+            }
+        }
+
+
+        public static void Print(int value)
         {
             foreach (var el in dwords)
             {
-                Console.WriteLine("{0}\t\t\t{1}", el.Key, el.Value);
+                if (Convert.ToInt32(el.Value)  >= value)
+                    Console.WriteLine("{0}\t\t\t{1}", el.Key, el.Value);
             }
         }
     }

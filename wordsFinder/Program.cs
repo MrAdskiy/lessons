@@ -11,7 +11,8 @@ namespace wordsFinder
             var data = new GetData();
             
             data.ReadFromFile();
-            Dict.Print();
+            // Dict.Print(50);
+            Dict.PrintTop(20);
         }
     }
 }
