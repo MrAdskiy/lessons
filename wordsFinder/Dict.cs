@@ -21,14 +21,10 @@ namespace wordsFinder
 
         private bool isWord(string str)
         {
-            if (str.Length<4 || str == "и" || str == "в" || str == "не" || str == "что" || str == "он" || str == "на" || str == "с" || str == "как" || str == "я" || str == "его" || str == "к" || str == "то" || str == "она" || str == "все" || str == "но" || str == "это" || str == "а" || str == "так")
-            {
+            if (str.Length<4)
                 return false;
-            }
             else
-            {
                 return true;
-            }
         }
 
         public static void PrintTop(int value)
