@@ -12,10 +12,10 @@ namespace wordsFinder
         {
             for (int i = listOfWords.Count - 1; i >= 0; i--)
             {
-                if (dwords.ContainsKey(listOfWords[i]))
-                    dwords[listOfWords[i]] ++;
+                if (dwords.ContainsKey(listOfWords[i].ToLower()))
+                    dwords[listOfWords[i].ToLower()] ++;
                 else
-                    dwords.Add(listOfWords[i], 1);
+                    dwords.Add(listOfWords[i].ToLower(), 1);
             }
         }
 
