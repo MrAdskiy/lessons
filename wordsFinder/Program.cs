@@ -12,7 +12,7 @@ namespace wordsFinder
             
             data.ReadFromFile();
             // Dict.Print(50);
-            Dict.PrintTop(20);
+            Dict.PrintTop(30);
         }
     }
 }
