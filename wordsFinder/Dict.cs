@@ -14,7 +14,7 @@ namespace wordsFinder
             {
                 if (dwords.ContainsKey(listOfWords[i].ToLower()))
                     dwords[listOfWords[i].ToLower()] ++;
-                else if (isWord(listOfWords[i].ToLower()))
+                else if (isWord(listOfWords[i]))
                     dwords.Add(listOfWords[i].ToLower(), 1);
             }
         }
@@ -36,6 +36,7 @@ namespace wordsFinder
                 values[count] = el.Value;
                 count++;
             }
+            values = values.Distinct().ToArray();
             Array.Sort(values);
 
             for (int i = values.Length-1; i >= values.Length-value; i--)
@@ -43,7 +44,9 @@ namespace wordsFinder
                 foreach (var el in dwords)
                 {
                     if (values[i] == el.Value)
-                        Console.WriteLine($"{el.Key}\t\t{el.Value}");
+                    {
+                        Console.WriteLine("{0,-10}{1,10}", el.Key, el.Value);
+                    }
                 }
             }
         }
