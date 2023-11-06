@@ -8,11 +8,11 @@ namespace wordsFinder
         public static void Main(string[] args)
         {
             var dict = new Dict();
-            var data = new GetData();
+            var data = new Data();
             
-            data.ReadFromFile();
+            dict.ReadFromFile();
             // Dict.Print(50);
-            Dict.PrintTop(30);
+            dict.PrintTop(30);
         }
     }
 }

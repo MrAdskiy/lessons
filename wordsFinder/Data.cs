@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace wordsFinder
 {
-    class GetData
+    class Data
     {
         private const string PATH = @".\text.txt";
         
@@ -25,7 +25,7 @@ namespace wordsFinder
             var list = new List<string>();
 
             foreach (var el in line)
-                if (!char.IsLetter(el))
+                if (!char.IsLetter(el) && el != ' ')
                     line = line.Replace(el, ' ');
 
             list.AddRange(line.Split(' '));
